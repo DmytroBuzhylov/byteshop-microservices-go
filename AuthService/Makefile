@@ -3,7 +3,7 @@ PROTO_SRC=proto
 OUT_DIR=generated
 
 PORT=50051
-DB_URL=postgres://postgres:root@localhost:5432/BiteShop
+DB_URL=
 
 build:
 	@echo "Компиляция проекта"
@@ -40,9 +40,6 @@ generate:
 	protoc --go_out=$(OUT_DIR)/product --go-grpc_out=$(OUT_DIR)/product $(PROTO_SRC)/product.proto
 	protoc --go_out=$(OUT_DIR)/order --go-grpc_out=$(OUT_DIR)/order $(PROTO_SRC)/order.proto
 	protoc --go_out=$(OUT_DIR)/payment --go-grpc_out=$(OUT_DIR)/payment $(PROTO_SRC)/payment.proto
-	protoc --go_out=$(OUT_DIR)/notification --go-grpc_out=$(OUT_DIR)/notification $(PROTO_SRC)/notification.proto
-
-
 
 
 help:

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package order;
+
+option go_package = "./order";
+
+service OrderService {
+  rpc GetOrder (GetOrderRequest) returns (GetOrderResponse);
+}
+
+
+message GetOrderRequest
+{
+  string BuyerID = 2;
+  string ProductID = 3;
+  double Amount = 4;
+}
+
+message GetOrderResponse {
+  string status = 1;
+  string ID = 2;
+}

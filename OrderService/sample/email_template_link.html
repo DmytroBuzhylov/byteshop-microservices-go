@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ссылка на скачивание - ByteShop</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #2d2d2d;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 2rem;
+            color: #54F2F2;
+            text-shadow: 0 0 10px #54F2F2;
+        }
+        .content {
+            text-align: center;
+        }
+        .content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        .product-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FF6B6B;
+            margin: 15px 0;
+            text-shadow: 0 0 5px #FF6B6B;
+        }
+        .link-container {
+            background-color: rgba(255, 107, 107, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #54F2F2 0%, #4286f4 100%);
+            color: #000;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 15px 0;
+            box-shadow: 0 0 20px rgba(84, 242, 242, 0.5);
+            transition: all 0.3s ease;
+        }
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(84, 242, 242, 0.7);
+        }
+        .direct-link {
+            font-size: 1rem;
+            word-break: break-all;
+            color: #54F2F2;
+            background-color: rgba(84, 242, 242, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            display: block;
+        }
+        .expiry-info {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #FF6B6B;
+        }
+        .instructions {
+            text-align: left;
+            background-color: rgba(84, 242, 242, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .instructions h3 {
+            color: #54F2F2;
+            margin-top: 0;
+        }
+        .instructions ol {
+            margin-left: 20px;
+            padding-left: 0;
+        }
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        .order-info {
+            font-size: 0.9rem;
+            color: #cccccc;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #3d3d3d;
+        }
+        .file-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 0;
+            background-color: rgba(84, 242, 242, 0.05);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .file-icon {
+            font-size: 1.8rem;
+            margin-right: 10px;
+        }
+        .file-details {
+            text-align: left;
+        }
+        .file-name {
+            font-weight: bold;
+        }
+        .file-size {
+            font-size: 0.8rem;
+            color: #cccccc;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #cccccc;
+        }
+        .footer a {
+            color: #54F2F2;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🎮 ByteShop</h1>
+    </div>
+    <div class="content">
+        <p>Спасибо за покупку в <strong>ByteShop</strong>!</p>
+
+        <div class="product-name">{{.ProductName}}</div>
+
+        <p>Ваш товар готов к скачиванию:</p>
+
+        <div class="link-container">
+<!--            <div class="file-info">-->
+<!--                <div class="file-icon">📦</div>-->
+<!--                <div class="file-details">-->
+<!--                    <div class="file-name">{{.ProductName}}</div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <a href="{{.ProductKey}}" class="download-btn">СКАЧАТЬ</a>
+
+            <p>Или используйте прямую ссылку:</p>
+            <div class="direct-link">{{.ProductKey}}</div>
+
+            <div class="expiry-info">Ссылка действительна до: 8 марта</div>
+        </div>
+
+        <div class="instructions">
+            <h3>Инструкции:</h3>
+            <ol>
+                <li>Нажмите кнопку «СКАЧАТЬ» или используйте прямую ссылку</li>
+                <li>Сохраните файл в удобное для вас место</li>
+                <li>Если файл архивирован, распакуйте его</li>
+                <li>Следуйте инструкциям по установке в прилагаемом readme-файле (если имеется)</li>
+            </ol>
+        </div>
+
+        <div class="order-info">
+            <p>Номер заказа: <strong>{{.OrderNumber}}</strong></p>
+            <p>Дата покупки: <strong>{{.PurchaseDate}}</strong></p>
+        </div>
+
+        <p>Если у вас возникли проблемы со скачиванием, пожалуйста, обратитесь в нашу службу поддержки.</p>
+    </div>
+    <div class="footer">
+        <p>С уважением, команда <a href="http://byteshop.com">ByteShop</a></p>
+        <p>© 2025 ByteShop. Все права защищены.</p>
+    </div>
+</div>
+</body>
+</html>

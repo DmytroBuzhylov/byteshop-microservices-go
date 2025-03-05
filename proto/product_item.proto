@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package product_item;
+
+option go_package = "./product_item";
+
+service ProductItemService {
+  rpc GiveProductItem (GiveProductItemRequest) returns (GiveProductItemResponse);
+}
+
+message GiveProductItemRequest {
+  string ProductID = 1;
+}
+message GiveProductItemResponse {
+  string Status = 1;
+  string Value = 2;
+  string Name = 3;
+  string ID = 4;
+  string Type = 5;
+}

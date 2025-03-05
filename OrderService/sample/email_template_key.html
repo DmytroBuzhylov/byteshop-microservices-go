@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выдача товара - ByteShop</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #2d2d2d;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 2rem;
+            color: #54F2F2;
+            text-shadow: 0 0 10px #54F2F2;
+        }
+        .content {
+            text-align: center;
+        }
+        .content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        .product-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FF6B6B;
+            margin: 15px 0;
+            text-shadow: 0 0 5px #FF6B6B;
+        }
+        .key-container {
+            background-color: rgba(255, 107, 107, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .key {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #54F2F2;
+            background-color: rgba(84, 242, 242, 0.1);
+            padding: 15px 25px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 10px 0;
+            text-shadow: 0 0 10px #54F2F2;
+            word-break: break-all;
+        }
+        .instructions {
+            text-align: left;
+            background-color: rgba(84, 242, 242, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .instructions h3 {
+            color: #54F2F2;
+            margin-top: 0;
+        }
+        .instructions ol {
+            margin-left: 20px;
+            padding-left: 0;
+        }
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        .order-info {
+            font-size: 0.9rem;
+            color: #cccccc;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #3d3d3d;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #cccccc;
+        }
+        .footer a {
+            color: #54F2F2;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🎮 ByteShop</h1>
+    </div>
+    <div class="content">
+        <p>Спасибо за покупку в <strong>ByteShop</strong>!</p>
+
+        <div class="product-name">{{.ProductName}}</div>
+
+        <p>Вот ваш ключ активации:</p>
+
+        <div class="key-container">
+            <div class="key">{{.ProductKey}}</div>
+            <p>Сохраните этот ключ в надежном месте.</p>
+        </div>
+
+        <div class="instructions">
+            <h3>Инструкции по активации:</h3>
+            <ol>
+                <li>Запустите платформу (Steam, Epic Games, Origin и т.д.)</li>
+                <li>Выберите опцию "Активировать продукт" или "Использовать ключ"</li>
+                <li>Введите ключ активации, указанный выше</li>
+                <li>Следуйте инструкциям для завершения установки</li>
+            </ol>
+        </div>
+
+        <div class="order-info">
+            <p>Номер заказа: <strong>{{.OrderNumber}}</strong></p>
+            <p>Дата покупки: <strong>{{.PurchaseDate}}</strong></p>
+        </div>
+
+        <p>Если у вас возникли проблемы с активацией, пожалуйста, обратитесь в нашу службу поддержки.</p>
+    </div>
+    <div class="footer">
+        <p>С уважением, команда <a href="http://byteshop.com">ByteShop</a></p>
+        <p>© 2025 ByteShop. Все права защищены.</p>
+    </div>
+</div>
+</body>
+</html>

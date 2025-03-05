@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "./auth";
+
+service AuthService {
+  rpc GetUser (GetUserRequest) returns (GetUserResponse);
+  rpc BanUser (BanUserRequest) returns (BanUserResponse);
+  rpc UnBanUser (UnBanUserRequest) returns (UnBanUserResponse);
+  rpc ChangeRole (ChangeRoleRequest) returns (ChangeRoleResponse);
+}
+
+
+message GetUserRequest {
+  string UserId = 1;
+}
+
+message User {
+  string UserId = 1;
+  string Email = 2;
+  string Name = 3;
+  string Role = 4;
+  string IsBanned = 5;
+  string CreatedAt = 6;
+}
+
+message GetUserResponse {
+  repeated User users = 1;
+}
+
+message BanUserRequest {
+  string UserId = 1;
+}
+
+message BanUserResponse {
+  string Status = 1;
+}
+
+message UnBanUserRequest {
+  string UserId = 1;
+}
+
+message UnBanUserResponse {
+  string Status = 1;
+}
+
+message ChangeRoleRequest {
+  string UserId = 1;
+  string Role = 2;
+}
+
+message ChangeRoleResponse {
+  string Status = 1;
+}

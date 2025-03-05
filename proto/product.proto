@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package product;
+
+option go_package = "./product";
+
+service ProductService {
+  rpc DeleteProduct (DeleteProductRequest) returns (DeleteProductResponse);
+  rpc DeleteAllProducts (DeleteAllProductsRequest) returns (DeleteAllProductsResponse);
+}
+
+
+
+message DeleteProductRequest {
+  string ProductId = 1;
+}
+
+message DeleteProductResponse {
+  string Status = 1;
+}
+
+message DeleteAllProductsRequest {
+  string UserId = 1;
+}
+
+message DeleteAllProductsResponse {
+  string Status = 1;
+}

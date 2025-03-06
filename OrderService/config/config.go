@@ -22,7 +22,7 @@ func LoadConfig() *Config {
 	}
 
 	return &Config{
-		DATABASE_URL:      os.Getenv("PAYPAL_CLIENT_ID"),
+		DATABASE_URL:      os.Getenv("DATABASE_URL"),
 		AUTH_SERVICE_URL:  os.Getenv("AUTH_SERVICE_URL"),
 		ORDER_SERVICE_URL: os.Getenv("ORDER_SERVICE_URL"),
 		EMAIL:             os.Getenv("EMAIL"),

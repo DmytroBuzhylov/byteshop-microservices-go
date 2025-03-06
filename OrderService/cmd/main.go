@@ -32,5 +32,10 @@ func main() {
 	e.GET("/api/user-orders/:id", handlers.UserOrdersHandler)
 
 	go grpc.StartGRPC()
+
+	go func() {
+		log.Println(config.ServiceConfig.DATABASE_URL)
+	}()
+
 	e.Start(config.ServiceConfig.ORDER_SERVICE_URL)
 }

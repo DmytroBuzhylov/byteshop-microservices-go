@@ -35,7 +35,7 @@ func (u UserHandler) HandlerLogin(c echo.Context) error {
 	if err != nil {
 		return c.JSON(http.StatusBadRequest, map[string]string{"error": "bad request"})
 	}
-
+	log.Println(req)
 	var count int64
 	u.DB.Table("users").Select("id, email, password_hash, role").Where("email = ?", req.Email).Count(&count).Scan(&user)
 

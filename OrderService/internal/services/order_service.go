@@ -53,7 +53,7 @@ func SendMail(to string, data EmailData, flag string) error {
 	m.SetHeader("To", to)
 	m.SetHeader("Subject", "Ваш заказ успешно оформлен")
 	m.SetBody("text/html", body.String())
-	d := gomail.NewDialer("localhost", 1025, "", "")
+	d := gomail.NewDialer("smtp.gmail.com", 587, config.ServiceConfig.EMAIL, "lwlq alep upbd aelc")
 	if err = d.DialAndSend(m); err != nil {
 		return fmt.Errorf("ошибка отправки письма: %w", err)
 	}
